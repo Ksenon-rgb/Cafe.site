@@ -132,30 +132,34 @@ body {
 main {
     padding-top: 0px;
 }
-.abouting{
+  .abouting {
+  display: flex;
+  flex-direction: column;
+  gap: 24px; 
     background: var(--bg-card);
-    max-width: 900px;
-    width: 100%;
+    max-width: 100px;
     border-radius: 32px;
     padding: 40px 40px 56px;
     box-shadow: 0 20px 50px rgba(62, 42, 32, 0.08);
 }
 
- .about-image{
-    flex:1;
+.about-image {
+  
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;   /* убрали 24px снизу — отступ теперь только через gap */
+  border-radius: 24px;
+  overflow: hidden;
 }
 
-.about-image img{
-    width: 800px;
-    height: 300px;
-    border-radius:25px;
-    box-shadow:0 15px 40px rgba(0,0,0,.2);
-    transition:.5s;
+.about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 60%;  /* сдвигаем фокус ниже, на стойку/кофе, а не на потолок */
+  filter: brightness(1.15) saturate(1.1); /* немного светлее и теплее */
 }
 
-.about-image img:hover{
-    transform:scale(1.04);
-}
 .about-text{
   text-align: center;
   flex:1;
@@ -169,7 +173,9 @@ main {
     margin: 0 0 28px;
     position: relative;
     display: inline-block;
+
 }
+
 
 .about-text h2::after{
   content: "";
@@ -250,62 +256,50 @@ main {
     background-color: #5a3e2d;
 }
 .advantages{
-    padding: 80px 40px;
-    text-align: center;
+    padding:80px 40px;
+    text-align:center;
 }
 
 .advantages h2{
-    font-size: 40px;
-    color: #5b3a29;
-    margin-bottom: 50px;
+    font-size:40px;
+    color:#5b3a29;
+    margin-bottom:50px;
 }
 
 .advantages-container{
-    display: flex;
-    justify-content: center;
-    flex-wrap: nowrap;
-    gap: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:30px;
 }
 
 .advantage-card{
-    flex: 1 1 0;
-    min-width: 0;
-    padding: 36px 24px;
-    background: #fff;
-    border-radius: 20px;
-    box-shadow: 0 8px 24px rgba(62, 42, 32, 0.06);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width:250px;
+    padding:30px;
+    background:white;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+    transition:.3s;
 }
 
 .advantage-card:hover{
-    transform: translateY(-8px);
-    box-shadow: 0 16px 36px rgba(62, 42, 32, 0.14);
+    transform:translateY(-10px);
+    box-shadow:0 15px 35px rgba(0,0,0,.2);
 }
 
 .icon{
-    width: 48px;
-    height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 16px;
-    background: #F4EBE0;
-    border-radius: 50%;
-    font-size: 20px;
+    font-size:50px;
+    margin-bottom:20px;
 }
 
 .advantage-card h3{
-    margin-bottom: 12px;
-    color: #6f4e37;
-    font-size: 18px;
+    margin-bottom:15px;
+    color:#6f4e37;
 }
 
 .advantage-card p{
-    color: #666;
-    line-height: 1.6;
-    font-size: 15px;
+    color:#666;
+    line-height:1.6;
 }
 .abouting {
     background-color: #ffffff;
@@ -620,213 +614,134 @@ main {
     font-style: italic;
   }
 
-  footer{
-    text-align:center;
-    padding: 40px 24px 60px;
-    font-family:'Jost', sans-serif;
-    font-size: 12px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--ink-soft);
-  }
-
   @media (max-width: 640px){
     .items{ grid-template-columns: 1fr; }
     .menu-section{ padding: 70px 20px 90px; }
     .category-title h3{ font-size: 22px; }
   }
     
-.special-offers{
-    max-width: 700px;
-    width: 90%;
-    margin: 60px auto;
-    padding: 48px 56px;
+.about-section{
+    background: var(--cream-deep);
+    padding: 100px 24px 120px;
+  }
+  .about-wrap{
+    max-width: 720px;
+    margin: 0 auto;
+    display:flex;
+    flex-direction:column;
+    gap: 28px;
+  }
+ 
+  .about-card{
     background: #fff;
-    border-radius: 28px;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
-    text-align: center;
-}
-
-.special-offers h2{
-    color: #5b3a29;
-    font-size: 28px;
-    margin: 0 0 16px;
-}
-
-.special-offers > p{
-    color: #555;
-    font-size: 16px;
-    line-height: 1.7;
+    border-radius: 22px;
+    padding: 44px 48px;
+    box-shadow: 0 18px 40px rgba(44,38,30,0.06);
+  }
+  .about-card.dark{
+    background: var(--ink);
+    color: var(--cream);
+  }
+  .about-card.narrow{
     max-width: 560px;
-    margin: 0 auto 24px;
-}
-
-.special-offers ul{
-    list-style: none;
-    padding: 0;
-    margin: 0 auto 28px;
-    max-width: 480px;
-    text-align: left;
-}
-
-.special-offers li{
-    padding: 14px 0 14px 34px;
-    position: relative;
-    border-bottom: 1px solid #f0e6da;
-    color: #444;
-    font-size: 15px;
-}
-
-.special-offers li:last-child{
-    border-bottom: none;
-}
-
-.special-offers li::before{
-    content: "☕";
-    position: absolute;
-    left: 0;
-    top: 12px;
-}
-.special-offers {
-    background-color: #fbfbfbfe;
-    padding: 20px;
-    border-radius: 20px;
-    margin-top: 30px;
-    font-family: Arial, sans-serif;
-    font-size: 17px;
-}
-.why-choose-us{
-    background: #ffffff;
-    text-align: center;
-    border-radius: 30px;
-    max-width: 700px;
-    margin: 50px auto;
-    padding: 45px 40px 40px;
-    box-shadow: 0 10px 30px rgba(0,0,0,.08);
-}
-
-.why-choose-us h2{
-    color: #3c1c00;
-    font-size: 32px;
-    margin-bottom: 16px;
-}
-
-.why-choose-us > p{
-    color: #3b2416;
-    font-size: 16px;
-    margin-bottom: 20px;
-}
-
-.why-choose-us ul{
-    list-style: none;
-    padding: 0;
-    margin: 0 auto 24px;
-    max-width: 420px;
-    text-align: left;
-}
-
-.why-choose-us li{
-    padding: 12px 0 12px 8px;
-    font-size: 16px;
-    color: #3b2416;
-    border-bottom: 1px solid #f0e6da;
-}
-
-.why-choose-us li:last-child{
-    border-bottom: none;
-}
-.about-us,
-.history,
-.values{
-    max-width: 800px;
-    margin: 50px auto;
-    padding: 48px 56px;
-    border-radius: 28px;
-    text-align: left;
-}
-
-.about-us h2,
-.history h2,
-.values h2{
-    font-family: Georgia, serif;
+    margin: 0 auto;
+    width: 100%;
+  }
+ 
+  .about-card h2{
+    font-family:'Playfair Display', serif;
+    font-weight: 600;
     font-size: 28px;
-    margin: 0 0 20px;
     text-align: center;
-}
-
-.about-us p,
-.history p,
-.values p{
-    font-size: 16px;
-    line-height: 1.8;
-    margin: 0 0 16px;
-}
-
-/* блок 1 — светлый, "визитка" */
-.about-us{
-    background: #fff;
-    box-shadow: 0 15px 40px rgba(62, 42, 32, 0.08);
-}
-.about-us h2{
-    color: #3c1c00;
-}
-.about-us p{
-    color: #5a4a3f;
-}
-
-/* блок 2 — тёмный акцент, "история" читается как рассказ */
-.history{
-    background: #3b2416;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
-}
-.history h2{
-    color: #f4ebe0;
-}
-.history p{
-    color: #d9c7b8;
-}
-
-/* блок 3 — светлый, но с выделенным списком-манифестом */
-.values{
-    background: #fff;
-    box-shadow: 0 15px 40px rgba(62, 42, 32, 0.08);
+    margin-bottom: 22px;
+    color: var(--ink);
+  }
+  .about-card.dark h2{ color: var(--cream); }
+ 
+  .about-card p{
+    font-size: 18px;
+    line-height: 1.65;
+    color: var(--ink-soft);
     text-align: center;
-}
-.values h2{
-    color: #3c1c00;
-}
-.values > p{
-    color: #5a4a3f;
-    text-align: center;
-}
-
-.values ul{
-    list-style: none;
-    padding: 0;
-    margin: 24px auto 0;
-    max-width: 480px;
-    text-align: left;
-}
-
-.values li{
-    padding: 12px 0 12px 34px;
-    position: relative;
-    color: #3b2416;
-    font-size: 16px;
-    border-bottom: 1px solid #f0e6da;
-}
-
-.values li:last-child{
-    border-bottom: none;
-}
-
-.values li::before{
-    content: "✓";
-    position: absolute;
-    left: 0;
-    color: #a36b3f;
-    font-weight: bold;
-}
+  }
+  .about-card.dark p{ color: #e7dfd0; }
+  .about-card p + p{ margin-top: 16px; }
+ 
+  .about-lead{
+    text-align:center;
+    font-size: 17px;
+    color: var(--ink-soft);
+    margin-bottom: 8px;
+  }
+  .about-sub{
+    text-align:center;
+    font-family:'Jost', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--copper);
+    margin-bottom: 26px;
+  }
+ 
+  .check-list{
+    list-style:none;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+  .check-list li{
+    display:flex;
+    align-items:center;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px dotted var(--line);
+    font-size: 17px;
+    color: var(--ink-soft);
+  }
+  .check-list li:last-child{ border-bottom: none; }
+  .check-list .mark{
+    color: var(--copper);
+    font-weight: 600;
+    flex-shrink:0;
+  }
+ 
+  .perk-list{
+    list-style:none;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+  .perk-list li{
+    display:flex;
+    align-items:baseline;
+    gap:20px;
+    padding: 12px 0;
+    border-bottom: 1px dotted var(--line);
+    font-size: 17px;
+    color: var(--ink-soft);
+  }
+  .perk-list li:last-child{ border-bottom: none; }
+  .perk-list .icon{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: var(--cream-deep);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size: 15px;
+    flex-shrink:0;
+  }
+ 
+  .about-closing{
+    text-align:center;
+    font-size: 16.5px;
+    font-style: italic;
+    color: var(--ink-soft);
+    margin-top: 26px;
+  }
+ 
+  @media (max-width: 640px){
+    .about-card{ padding: 34px 26px; }
+  }
 .advantages{
     padding:80px 40px;
     text-align:center;
@@ -1120,3 +1035,13 @@ main {
     border-radius:25px;
     box-shadow:0 10px 30px rgba(0,0,0,.2);
 }
+ footer{
+    text-align:center;
+    padding: 40px 24px 60px;
+    font-family:'Jost', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+  }
+  
